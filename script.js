@@ -57,33 +57,20 @@ function initMobileMenu() {
 /* ==========================================================================
    TRAYECTORIA
    ========================================================================== */
-const trayectoriaData = [
-  {
-    nombre: "Próximamente",
-    rol: "Próximamente",
-    descripcion: "Próximamente.",
-    info: "Próximamente",
-  },
-  {
-    nombre: "Próximamente",
-    rol: "Próximamente",
-    descripcion: "Próximamente.",
-    info: "Próximamente",
-  },
-  {
-    nombre: "Próximamente",
-    rol: "Próximamente",
-    descripcion: "Próximamente.",
-    info: "Próximamente",
-  },
-  {
-    nombre: "Próximamente",
-    rol: "Próximamente",
-    descripcion: "Próximamente.",
-    info: "Próximamente",
-  },
-];
-
+export default function Trayectoria() {
+  return (
+    <div className="contenedor-trayectoria">
+      {trayectoriaData.map((item, index) => (
+        <div key={index} className="tarjeta">
+          <h3>{item.nombre}</h3>
+          <span>{item.rol}</span>
+          <p>{item.descripcion}</p>
+          <small>{item.info}</small>
+        </div>
+      ))}
+    </div>
+  );
+}
 function renderTray() {
   const grid = document.getElementById("trayectoriaGrid");
   if (!grid) return;
