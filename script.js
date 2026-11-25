@@ -84,11 +84,11 @@ const trayectoriaData = [
   },
 ];
 
-function renderTrayectoria() {
+function renderTray() {
   const grid = document.getElementById("trayectoriaGrid");
   if (!grid) return;
 
-  grid.innerHTML = trayectoriaData
+  <div id="trayectoriaGrid"></div>
     .map(
       (item) => `
       <article class="card">
