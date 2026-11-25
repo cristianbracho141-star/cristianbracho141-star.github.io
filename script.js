@@ -2,7 +2,7 @@
    Cris — Portafolio
    Lógica de interfaz: navbar, contenido dinámico y contacto.
    ========================================================================== */
-
+JavaScript
 document.addEventListener("DOMContentLoaded", () => {
   setYear();
   initNavbarScroll();
@@ -45,7 +45,6 @@ function initMobileMenu() {
 
   toggle.addEventListener("click", () => {
     const isOpen = menu.classList.toggle("is-open");
-    toggle.classList.toggle("is-open", isOpen);
     toggle.setAttribute("aria-expanded", String(isOpen));
   });
 
@@ -57,37 +56,31 @@ function initMobileMenu() {
 
 /* ==========================================================================
    TRAYECTORIA
-   Para añadir un nuevo proyecto o experiencia, agrega un objeto más
-   a este arreglo con los mismos campos.
    ========================================================================== */
 const trayectoriaData = [
   {
-    nombre: "minetop."
-    rol: "Sjmod."
-    descripcion:
-      "Proximamente.",
-    info: "Proximamente",
+    nombre: "minetop.",
+    rol: "Sjmod.",
+    descripcion: "Próximamente.",
+    info: "Próximamente",
   },
   {
-    nombre: "Proximamente",
-    rol: "Proximamente",
-    descripcion:
-      "Proximamente.",
-    info: "Proximamente",
+    nombre: "Próximamente",
+    rol: "Próximamente",
+    descripcion: "Próximamente.",
+    info: "Próximamente",
   },
   {
-    nombre: "Proximamente",
-    rol: "Proximamente",
-    descripcion:
-      "Proximamente.",
-    info: "Proximamente",
+    nombre: "Próximamente",
+    rol: "Próximamente",
+    descripcion: "Próximamente.",
+    info: "Próximamente",
   },
   {
-    nombre: "Proximamente",
-    rol: "Proximamente",
-    descripcion:
-      "Proximamente.",
-    info: "Proximamente",
+    nombre: "Próximamente",
+    rol: "Próximamente",
+    descripcion: "Próximamente.",
+    info: "Próximamente",
   },
 ];
 
@@ -111,13 +104,11 @@ function renderTrayectoria() {
 
 /* ==========================================================================
    SERVICIOS
-   Para añadir un nuevo servicio, agrega un objeto más a este arreglo.
-   El campo "icono" acepta cualquier SVG en línea.
    ========================================================================== */
 const serviciosData = [
   {
     titulo: "Edición de vídeos",
-    descripcion: "Edito mis videos y estoy aprendiendo mas para mejorar su calidad.",
+    descripcion: "Edito mis videos y estoy aprendiendo más para mejorar su calidad.",
     icono: `<svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4z" stroke="currentColor" stroke-width="1.5"/><path d="M10 9.5v5l4-2.5-4-2.5Z" fill="currentColor"/></svg>`,
   },
   {
@@ -127,10 +118,9 @@ const serviciosData = [
   },
   {
     titulo: "Habilidades de moderación",
-    descripcion: "Cada dia intento mejorar como creador de contenido y staff.",
+    descripcion: "Cada día intento mejorar como creador de contenido y staff.",
     icono: `<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="10" r="1.4" fill="currentColor"/><path d="M5 17l5-5 4 4 3-3 2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`,
   },
-  
 ];
 
 function renderServicios() {
@@ -148,54 +138,4 @@ function renderServicios() {
     `
     )
     .join("");
-}
-
-/* ---------- Contacto: copiar usuario de Discord ---------- */
-function initDiscordCopy() {
-  const card = document.getElementById("discordCard");
-  const handleEl = document.getElementById("discordHandle");
-  const hintEl = document.getElementById("discordHint");
-  if (!card || !handleEl || !hintEl) return;
-
-  const discordUser = handleEl.textContent.trim();
-  const defaultHint = hintEl.textContent;
-
-  card.addEventListener("click", async () => {
-    try {
-      await copyToClipboard(discordUser);
-      hintEl.textContent = "¡Copiado!";
-    } catch (err) {
-      hintEl.textContent = "No se pudo copiar";
-    }
-
-    setTimeout(() => {
-      hintEl.textContent = defaultHint;
-    }, 2000);
-  });
-}
-
-function copyToClipboard(text) {
-  if (navigator.clipboard && window.isSecureContext) {
-    return navigator.clipboard.writeText(text);
-  }
-
-  // Alternativa para navegadores sin soporte de Clipboard API
-  return new Promise((resolve, reject) => {
-    const textarea = document.createElement("textarea");
-    textarea.value = text;
-    textarea.style.position = "fixed";
-    textarea.style.opacity = "0";
-    document.body.appendChild(textarea);
-    textarea.focus();
-    textarea.select();
-
-    try {
-      document.execCommand("copy");
-      resolve();
-    } catch (err) {
-      reject(err);
-    } finally {
-      document.body.removeChild(textarea);
-    }
-  });
 }
