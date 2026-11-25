@@ -62,8 +62,8 @@ function initMobileMenu() {
    ========================================================================== */
 const trayectoriaData = [
   {
-    nombre: minetop.",
-    rol
+    nombre: "minetop."
+    rol: "Sjmod."
     descripcion:
       "Proximamente.",
     info: "Proximamente",
