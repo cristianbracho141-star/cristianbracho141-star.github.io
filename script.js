@@ -62,7 +62,7 @@ function initMobileMenu() {
    ========================================================================== */
 const trayectoriaData = [
   {
-    nombre: mineraid.onplugged.host
+    nombre: mineraid.onplugged.host <\p>
     rol: Sjmod
     descripcion:
       "Proximamente.",
