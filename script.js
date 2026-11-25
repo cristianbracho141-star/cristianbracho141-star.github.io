@@ -57,10 +57,9 @@ function initMobileMenu() {
 /* ==========================================================================
    TRAYECTORIA
    ========================================================================== */
-{trayectoriaData.map((item, index) => (
-  <div key={index}>{item.nombre}</div>
-))}
-   nombre: "Próximamente",
+const trayectoriaData = [
+  {
+    nombre: "Próximamente",
     rol: "Próximamente",
     descripcion: "Próximamente.",
     info: "Próximamente",
